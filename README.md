@@ -1,7 +1,7 @@
 # Follow *[@RealTrumpTalk](https://twitter.com/RealTrumpTalk)* on Twitter!
 
 # TrumpTalk
-Using markov-chains to parse tweets by [@realDonaldTrump](https://twitter.com/realDonaldTrump) and create tweets new using what he says. It will post a new tweet every 30 minutes, which has a 40% chance of mentioning a user, and a 75% chance of including a hashtag. Every 12 hours, the database of tweets will be refreshed and re-parsed to stay up to date.
+Using markov-chains to parse tweets by [@realDonaldTrump](https://twitter.com/realDonaldTrump) and create tweets using what he says. It will post a new tweet every 30 minutes, which has a 40% chance of mentioning a user, and a 75% chance of including a hashtag. Every 12 hours, the database of tweets will be refreshed and re-parsed to stay up to date.
 
 ### Dependencies
 - [Tweepy](https://github.com/tweepy/tweepy)

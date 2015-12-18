@@ -122,25 +122,17 @@ def decorate(s):
     print "[OUT:] " + s
     return s
 
-iters = 0
 
-while True:
-	ctime = datetime.now().strftime('%H:%M')
-	print "["+ctime+"] Posting new status."
-	status = markov()
-	api.update_status(status)
+ctime = datetime.now().strftime('%H:%M')
+print "["+ctime+"] Posting new status."
+status = markov()
+api.update_status(status)
 
-	# Every 12 hours
-	if iters == 24:
-		iters = 0
-		username = "realDonaldTrump"
-		print "["+ctime+"] Downloading new tweets from @"+username
-		get_all_tweets(username)
-		print "["+ctime+"] Parsing tweets."
-		stripTweets()
-	else:
-		iters += 1
 
-	print "["+ctime+"] Batch completed. Going back to sleep."
+username = "realDonaldTrump"
+print "["+ctime+"] Downloading new tweets from @"+username
+get_all_tweets(username)
+print "["+ctime+"] Parsing tweets."
+stripTweets()
 
-	time.sleep(1800)
+print "["+ctime+"] Batch completed. Going back to sleep."

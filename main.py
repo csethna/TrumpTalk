@@ -9,10 +9,13 @@ import markovify
 import shelve
 import random
 import time
+import HTMLParser
 from datetime import datetime
 
 # READ THE README.MD!
 import credentials as creds
+
+h = HTMLParser.HTMLParser()
 
 #Twitter API credentials
 consumer_key = creds.consumer_key
@@ -90,7 +93,7 @@ def markov():
 
     text_model = markovify.Text(text)
 
-    return decorate(text_model.make_short_sentence(140))
+    return decorate(h.unescape(text_model.make_short_sentence(140)))
 
 def decorate(s):
     l_m = []
